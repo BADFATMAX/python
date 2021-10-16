@@ -9,9 +9,9 @@ parser.add_argument('p', help="probability")
 args = parser.parse_args()
 
 def choose_rand_array(a, b, p):
-    L1 = (np.random.random(len(a)))
-    L1 = L1 > p
-    return np.choose(L1, [b, a])
+    l1 = (np.random.random(len(a)))
+    l1 = l1 > p
+    return np.choose(l1, [b, a])
 
 
 def where_rand_array(a, b, p):
