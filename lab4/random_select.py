@@ -1,8 +1,6 @@
 import numpy as np
 import argparse
 import random
-import math
-import string
 
 parser = argparse.ArgumentParser()
 parser.add_argument('ff', help="first file name")
@@ -32,4 +30,4 @@ def arrays_reader(file1, file2, probability):
 if __name__ == "__main__":
     a, b, p = arrays_reader(args.ff, args.sf, args.p)
     print('Where : ', where_rand_array(a, b, p))
-    print('Choose : ', choose_rand_arrays(a, b, p))
+    print('Choose : ', choose_rand_array(a, b, p))
