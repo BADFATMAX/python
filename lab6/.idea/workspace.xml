@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="82569d93-4020-452e-a796-f008ef69d3f4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/squid_mugunghwa.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo.mov" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/redlight_greenlight.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-    </list>
+    <list default="true" id="82569d93-4020-452e-a796-f008ef69d3f4" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -113,7 +106,7 @@
       <workItem from="1635418417061" duration="4030000" />
       <workItem from="1635426944115" duration="8291000" />
       <workItem from="1635502714022" duration="2082000" />
-      <workItem from="1635514401955" duration="10033000" />
+      <workItem from="1635514401955" duration="10155000" />
     </task>
     <servers />
   </component>
