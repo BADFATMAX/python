@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="82569d93-4020-452e-a796-f008ef69d3f4" name="Changes" comment="" />
+    <list default="true" id="82569d93-4020-452e-a796-f008ef69d3f4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -107,6 +109,9 @@
       <workItem from="1635426944115" duration="8291000" />
       <workItem from="1635502714022" duration="2082000" />
       <workItem from="1635514401955" duration="10155000" />
+      <workItem from="1635533003418" duration="174000" />
+      <workItem from="1635573901747" duration="3262000" />
+      <workItem from="1636287494635" duration="24000" />
     </task>
     <servers />
   </component>
@@ -135,21 +140,6 @@
           <url>file://$PROJECT_DIR$/main.py</url>
           <line>18</line>
           <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test.py</url>
-          <line>5</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test.py</url>
-          <line>6</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test.py</url>
-          <line>46</line>
-          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
