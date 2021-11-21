@@ -15,51 +15,52 @@ fgbg = cv2.createBackgroundSubtractorMOG2(50, 200, False)
 frameCount = 0
 
 while capture.isOpened():
-	# Return Value and the current frame
-	ret, frame = capture.read()
-	ret2, frame2 = capture.read()
 
-	#  Check if a current frame actually exist
-	if not ret:
-		break
+    # Return Value and the current frame
+    ret, frame = capture.read()
+    ret2, frame2 = capture.read()
 
-	frameCount += 1
-	# Resize the frame
-	resizedFrame = cv2.resize(frame, (0, 0), fx=0.6, fy=0.6)
+    #  Check if a current frame actually exist
+    if not ret:
+        break
 
-	# Get the foreground mask
-	fgmask = fgbg.apply(resizedFrame)
+    frameCount += 1
+    # Resize the frame
+    resizedFrame = cv2.resize(frame, (0, 0), fx=0.6, fy=0.6)
 
-	contour = cv2.absdiff(frame, frame2)
-	contour_r = cv2.GaussianBlur(contour, (5, 5), cv2.BORDER_DEFAULT)
-	contour_r = cv2.inRange(contour_r, (0, 20, 0), (255, 255, 255))
-	contour_r = cv2.cvtColor(contour_r, cv2.IMREAD_COLOR)
+    # Get the foreground mask
+    fgmask = fgbg.apply(resizedFrame)
 
-	mask_r = np.where(np.all(contour_r != (255, 255, 255), axis=-1, keepdims=True), red, green)
+    contour = cv2.absdiff(frame, frame2)
+    contour_r = cv2.GaussianBlur(contour, (5, 5), cv2.BORDER_DEFAULT)
+    contour_r = cv2.inRange(contour_r, (0, 20, 0), (255, 255, 255))
+    contour_r = cv2.cvtColor(contour_r, cv2.IMREAD_COLOR)
 
-	# Result
-	res1 = cv2.addWeighted(frame, 1, mask_r, 1, 0)
+    mask_r = np.where(np.all(contour_r != (255, 255, 255), axis=-1, keepdims=True), red, green)
 
-	# Count all the non zero pixels within the mask
-	count = np.count_nonzero(fgmask)
+    # Result
+    res1 = cv2.addWeighted(frame, 1, mask_r, 1, 0)
 
-	print('Frame: %d, Pixel Count: %d' % (frameCount, count))
+    # Count all the non zero pixels within the mask
+    count = np.count_nonzero(fgmask)
 
-	# Determine how many pixels do you want to detect to be considered "movement"
-	if frameCount > 1 and count > 300:
-		print('MOTION DETECTED')
-		cv2.putText(res1, 'MOTION DETECTED', (10, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2, cv2.LINE_AA)
+    print('Frame: %d, Pixel Count: %d' % (frameCount, count))
 
-	cv2.imshow('Frame', resizedFrame)
-	cv2.imshow('Mask', fgmask)
-	cv2.imshow('Contour', contour)
-	cv2.imshow('Contour_r', contour_r)
-	cv2.imshow('GREEN-RED MASK', mask_r)
-	cv2.imshow('RESULT', res1)
+    # Determine how many pixels do you want to detect to be considered "movement"
+    if frameCount > 1 and count > 300:
+        print('MOTION DETECTED')
+        cv2.putText(res1, 'MOTION DETECTED', (10, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2, cv2.LINE_AA)
 
-	k = cv2.waitKey(1) & 0xff
-	if k == 27: # esc to stop
-		break
+    cv2.imshow('Frame', resizedFrame)
+    cv2.imshow('Mask', fgmask)
+    cv2.imshow('Contour', contour)
+    cv2.imshow('Contour_r', contour_r)
+    cv2.imshow('GREEN-RED MASK', mask_r)
+    cv2.imshow('RESULT', res1)
+
+    k = cv2.waitKey(1) & 0xff
+    if k == 27:  # esc to stop
+        break
 
 capture.release()
 cv2.destroyAllWindows()
