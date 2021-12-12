@@ -58,6 +58,7 @@ class Neuron:
         return x * (1 - x)
 
 
+
 def loss(predict, expect):
     return expect - predict
 
